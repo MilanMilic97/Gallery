@@ -1,0 +1,126 @@
+﻿@section Scripts {
+    @Scripts.Render("~/Scripts/Skripta.js")
+
+
+}
+
+<div>
+    @*---------------------------------------------REGISTRATION AND LOGIN HEAD---------------------------------------*@
+    <div id="regLogHead" style="margin-left:45%; margin-top:2%">
+        <p><b>User is not logged in</b></p>
+        <button id="btnRegHead" class="btn btn-default" style="background-color:lightblue; margin-right:30%">Registration</button>
+        <br />
+        <button style="margin-top:2%; width:100px" id="btnLogHead" class="btn btn-default">Login</button>
+    </div>
+
+    @*---------------------------------------------REGISTRATION---------------------------------------*@
+    <div class="row" style="margin:auto; width:450px">
+        <div class="col-sm-4 hidden" id="regDiv">
+            <form method="post" action="post/" id="regForm">
+                <h3 style="text-align:center">User registration</h3>
+
+                <div style="margin-top:10%" class="form-group">
+                    <label>E-mail adress:</label>
+                    <input style="float:right" class="form-control" type="text" id="regEmail" />
+                </div>
+
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input style="float:right" class="form-control" type="password" id="regPass" />
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm password:</label>
+                    <input style="float:right" class="form-control" type="password" id="regPass2" />
+                </div>
+
+                <div class="form-group" style="margin-top:5%; margin-left:21%">
+                    <button style="margin-left:100px;width:100px; background-color:lightblue" type="submit" class="btn btn-default">Register</button>                 
+                    <br />
+                    <input style="margin-right:20%;margin-left:100px;margin-top:10px;width:100px" id="goToRegLog" type="button" class="btn btn-default" value="Return" />
+                    <p id="info" style="font-weight:bold; margin-top:10%; margin-right:20%; text-align:center"></p>
+                    <input style="margin-left:20%" id="jumpOnLog" type="button" class="btn btn-default hidden" value="Login" />
+                </div>
+            </form>
+        </div>
+
+        @*---------------------------------------------LOGIN---------------------------------------*@
+        <div class="col-sm-4; hidden" id="logDiv">
+            <form method="post" action="post/" id="logForm">
+                <h3 style="text-align:center">User Login</h3>
+                <div style="margin-top:10%" class="form-group">
+                    <label>E-mail adress:</label>
+                    <input style="float:right" class="form-control" type="text" id="logEmail" />
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input style="float:right" class="form-control" type="password" id="logPass" />
+                </div>
+                <div class="form-group" style="margin-top:10%; margin-left:25%">
+                    <button style="margin-left:100px;width:100px;background-color:lightblue" type="submit" class="btn btn-default">Log in</button>
+                    <br />
+                    <input style="margin-right:20%;margin-left:100px;margin-top:10px;width:100px" id="goToRegLog2" type="button" class="btn btn-default" value="Return" />
+                    <p id="info"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+    @*---------------------------------------------LOG OUT-------------------------------------------*@
+    <div id="logout" style="height:70px" class="hidden">
+        <p style="width:60%; margin-left:40%;" id="accInfo"></p>
+        <button style="background-color:lightblue; margin-left:45%" class="btn btn-default" id="btnLogout">Log out</button>
+    </div>
+
+    @*---------------------------------------------SEARCH---------------------------------------*@
+    <div>
+        <div class="hidden" id="search" style="width:35%; margin:auto">
+            <h3 style="text-align:center">Search pictures by price: </h3>
+            <label style="margin-top:10px; margin-bottom:10px">Minimum: <input type="text" id="searchMin" style="margin-left:73px" /></label> 
+            <br />
+            <label>Maximum: <input type="text" id="searchMax" style="margin-left:70px" /></label>           
+            <button id="searchbtn" type="submit" class="btn btn-default" style="margin-left:150px; margin-top:10px">Search</button>
+        </div>      
+    </div>
+
+    @*---------------------------------------------TABLE DIV---------------------------------------*@
+    <div id="data" class="row" style="clear:both">
+    </div>
+
+    @*---------------------------------------------CREATE/EDIT FORM---------------------------------------*@
+    <div>
+        <hr />
+        <form method="post" action="post/" id="create" class="hidden" style="margin:auto; width:500px">
+            <h3 style="text-align:center">Create new hotel</h3>
+            <div class="form-group" style="margin-top:50px">
+                <label>Gallery</label>
+                <select class="form-control col-sm-4" style="float:right" id="crGallery"></select>
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input style="float:right" class="form-control" type="text" id="crName" />
+                <p id="validationMsgName" style="color:red"></p>
+            </div>
+            <div class="form-group">
+                <label>Author</label>
+                <input style="float:right;width:150px" class="form-control" id="crAuthor" />
+                <p id="validationMsgYear" style="color:red"></p>
+            </div>
+            <div class="form-group">
+                <label>Year</label>
+                <input style="float:right;width:150px" class="form-control" id="crYear" />
+                <p id="validationMsgRooms" style="color:red"></p>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input style="float:right; width:150px" class="form-control" id="crPrice" />
+                <p id="validationMsgEmployees" style="color:red"></p>
+            </div>
+            <div class="form-group" style="margin:auto; width:250px; margin-top:50px">
+                <input id="clearCRForm" type="button" class="btn btn-default" style="background-color:lightblue; margin-left:30%; width:100px" value="Clear form">
+                <br />
+                <button style="margin-left:30%; width:100px;margin-top:10px" type="submit" class="btn btn-default">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
