@@ -14,6 +14,8 @@ namespace MilanMilicIspit.Interfaces
         void Add(Picture picture);
         void Update(Picture picture);
         void Delete(Picture picture);
+        IQueryable<Picture> GetPicturesByGalleryId(int id);
+
 
         IQueryable<Picture> SearchByYear(int year);
         IQueryable<Picture> SearchByPrice(int min, int max);

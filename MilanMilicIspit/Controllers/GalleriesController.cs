@@ -25,7 +25,7 @@ namespace MilanMilicIspit.Controllers
         {
             return _repository.GetAll().ProjectTo<GalleryDTO>();
         }
-        [Authorize]
+        //[Authorize]
         [ResponseType(typeof(GalleryDTO))]
         public IHttpActionResult GetById(int id)
         {
@@ -40,14 +40,14 @@ namespace MilanMilicIspit.Controllers
             }
             return Ok(Mapper.Map<GalleryDTO>(v1));
         }
-        [Authorize]
+      //  [Authorize]
         [Route("api/tradition")]
         [HttpGet]
         public IEnumerable<GalleryDTO> GetAllSortedByYear()
         {
             return _repository.GetAllSortedByYear().ProjectTo<GalleryDTO>();
         }
-        [Authorize]
+      //  [Authorize]
         [Route("api/number")]
         [HttpGet]
         public IEnumerable<NumbersDTO> GetGalleriesWithNumberOfPictures()

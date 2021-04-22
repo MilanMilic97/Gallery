@@ -18,5 +18,6 @@ namespace MilanMilicIspit.Models
         public double Price { get; set; }
 
         public string GalleryName { get; set; }
+        public int GaleryId { get; set; }
     }
 }

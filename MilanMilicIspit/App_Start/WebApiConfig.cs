@@ -23,7 +23,7 @@ namespace MilanMilicIspit
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-
+            
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -32,8 +32,9 @@ namespace MilanMilicIspit
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            var cors = new EnableCorsAttribute("*", "*", "*");
-            config.EnableCors(cors);
+            //var cors = new EnableCorsAttribute("*", "*", "*");
+
+            //config.EnableCors(cors);
             config.EnableSystemDiagnosticsTracing();
 
             var container = new UnityContainer();

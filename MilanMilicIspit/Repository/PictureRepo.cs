@@ -78,5 +78,10 @@ namespace MilanMilicIspit.Repository
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        public IQueryable<Picture> GetPicturesByGalleryId(int id)
+        {
+            return db.Pictures.Where(x => x.GaleryId == id);
+        }
     }
 }
