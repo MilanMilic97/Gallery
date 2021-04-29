@@ -27,7 +27,7 @@ namespace MilanMilicIspit.Controllers
             return _repository.GetAll().ProjectTo<PictureDTO>();
         }
 
-       // [Authorize]
+        [Authorize]
         [ResponseType(typeof(PictureDTO))]
         public IHttpActionResult GetById(int id)
         {
@@ -53,7 +53,7 @@ namespace MilanMilicIspit.Controllers
              return Ok(_repository.GetPicturesByGalleryId(id).ProjectTo<PictureDTO>());       
         }
 
-        // [Authorize]
+        [Authorize]
         // [Route("api/slike")]      
         public IEnumerable<PictureDTO> GetSearchByYear(int year)
         {
@@ -73,7 +73,7 @@ namespace MilanMilicIspit.Controllers
             return Ok(picture);          
         }
 
-      //  [Authorize]
+        [Authorize]
         [ResponseType(typeof(PictureDTO))]
         [HttpPut]
         public IHttpActionResult Put(int id, Picture picture)
@@ -99,7 +99,7 @@ namespace MilanMilicIspit.Controllers
             return Ok(picture);
         }
 
-      //  [Authorize]
+        [Authorize]
         public IHttpActionResult Delete(int id)
         {
             if (id < 0)
@@ -110,7 +110,7 @@ namespace MilanMilicIspit.Controllers
             return Ok();
         }
         [Route("api/search")]
-      //  [Authorize]   
+        [Authorize]   
         [HttpPost]
         public IEnumerable<PictureDTO> GetSearchByPrice(int min, int max)
         {
